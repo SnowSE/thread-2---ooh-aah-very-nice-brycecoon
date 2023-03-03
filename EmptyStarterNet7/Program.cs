@@ -6,12 +6,12 @@ namespace ApplePicker
 {
   class Program
     {  
-        // static LotteryPeriod p = new LotteryPeriod();
+        //creates the main orchard to hold the values
         static Orchard orchard = new Orchard();
-        public static int mainThreads = 4; //VENDOR Thread Count
+        public static int mainThreads = 4; 
         public static int juiceThread = 3;
-        public static int loadCapacity = 1000;
-        public static int applesToPick = 100000;
+        public static int loadCapacity = 10000;
+        public static int applesToPick = 1000000;
 
 
         static void Main(string[] args)
@@ -23,7 +23,7 @@ namespace ApplePicker
 
             List<Thread> Workers = new List<Thread>();
 
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < mainThreads; i++)
             {
                 Thread t = new Thread(new ThreadStart(tWorker));
                 Workers.Add(t);
@@ -44,7 +44,7 @@ namespace ApplePicker
             Console.WriteLine("Elapsed time for {0} threads is: {1}", Workers, timer.Elapsed);
             Console.WriteLine("There were " + orchard.applesPicked.Count + " apples picked ");
 
-            //Phase 3 - process into apple juice
+            //process into apple juice
             Thread juicer1 = new Thread(Juicers);
             juicer1.Start();
             Thread juicer2 = new Thread(Juicers);
