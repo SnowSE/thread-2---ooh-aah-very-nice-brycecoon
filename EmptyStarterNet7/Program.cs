@@ -8,9 +8,11 @@ namespace ApplePicker
     {  
         // static LotteryPeriod p = new LotteryPeriod();
         static Orchard orchard = new Orchard();
-        public static int Threads = 4; //VENDOR Thread Count
-        public static int loadCapacity = 10;
-        public static int applesToPick = 100;
+        public static int mainThreads = 4; //VENDOR Thread Count
+        public static int juiceThread = 3;
+        public static int loadCapacity = 1000;
+        public static int applesToPick = 100000;
+
 
         static void Main(string[] args)
         {

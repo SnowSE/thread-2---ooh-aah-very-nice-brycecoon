@@ -5,7 +5,7 @@ public class appleJuicer {
     public void juiceApples(Orchard orchard) {
         List<apple> apples = new();
 
-            for (int i = 0; i <= orchard.applesPicked.Count/Program.Threads; i++)
+            for (int i = 0; i <= orchard.applesPicked.Count/Program.juiceThread; i++)
             {
                 apples.Add(new apple());
 

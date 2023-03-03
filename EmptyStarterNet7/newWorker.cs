@@ -8,7 +8,7 @@ namespace ApplePicker
         {
 
             List<apple> apples = new();
-            for (int i = 0; i <= (Program.applesToPick / Program.Threads); i++)
+            for (int i = 0; i <= (Program.applesToPick / Program.mainThreads); i++)
             {
                 apples.Add(new apple());
 
